@@ -5,7 +5,7 @@
 <title>Ardhangini Ji 💞🎀</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🌸 STYLISH ROMANTIC FONTS -->
+<!-- 🌸 FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -19,7 +19,7 @@ body{
     color:white;
 }
 
-/* ================= SCENE (REEL STYLE) ================= */
+/* ================= SCENES ================= */
 .scene{
     position:absolute;
     inset:0;
@@ -29,25 +29,22 @@ body{
     align-items:center;
     text-align:center;
     opacity:0;
-    transition:opacity 1.5s ease;
+    transition:opacity 1.2s ease;
     padding:30px;
 }
 .scene.active{opacity:1;}
 
 h1{
     font-family:'Great Vibes',cursive;
-    font-size:52px;
-    margin-bottom:15px;
-    animation:zoomIn 2s;
+    font-size:48px;
+    margin-bottom:12px;
 }
-
 p{
     font-size:20px;
-    max-width:700px;
-    animation:fadeUp 2s;
+    max-width:720px;
 }
 
-/* ================= PHOTO ================= */
+/* ================= OPTIONAL PHOTO ================= */
 .photo{
     width:260px;
     border-radius:20px;
@@ -55,35 +52,41 @@ p{
     box-shadow:0 12px 30px rgba(0,0,0,0.6);
 }
 
-/* ================= BUTTON ================= */
+/* ================= CONTROLS ================= */
+.controls{
+    position:fixed;
+    bottom:25px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:0 30px;
+    z-index:100;
+}
+
 button{
-    margin-top:30px;
-    padding:14px 36px;
-    font-size:20px;
+    padding:12px 26px;
     border:none;
-    border-radius:40px;
+    border-radius:35px;
     background:#ff4d6d;
     color:white;
+    font-size:16px;
     cursor:pointer;
-    animation:pulse 1.5s infinite;
+}
+button:hover{transform:scale(1.08);}
+
+/* ================= MUSIC BUTTON ================= */
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:200;
+    background:#ff4d6d;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:16px;
 }
 
-/* ================= ANIMATIONS ================= */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
-}
-@keyframes zoomIn{
-    from{opacity:0;transform:scale(0.7);}
-    to{opacity:1;transform:scale(1);}
-}
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
-}
-
-/* ================= FLOATING HEARTS ================= */
+/* ================= HEARTS ================= */
 .heart{
     position:fixed;
     bottom:-20px;
@@ -100,73 +103,81 @@ button{
 <body>
 
 <!-- =====================================================
-🎵 YOUR SONG (ALREADY ADDED – DO NOT CHANGE)
-Song: https://youtu.be/uH08H02VTiE
+🎵 YOUTUBE SONG (YOUR LINK ALREADY ADDED)
+Song link: https://youtu.be/uH08H02VTiE
 ===================================================== -->
-<iframe width="1" height="1"
-src="https://www.youtube.com/embed/uH08H02VTiE?autoplay=1&loop=1&playlist=uH08H02VTiE"
-allow="autoplay">
-</iframe>
 
-<!-- ================= SCENE 1 ================= -->
-<div class="scene active">
-<h1>Hey… 💖</h1>
-<p>I made something special for you</p>
+<!-- YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- Hidden Player -->
+<div id="player"></div>
+
+<!-- Music ON / OFF Button -->
+<button class="music-btn" onclick="toggleMusic()">🔊 Music ON</button>
+
+<!-- ================= SCENES (1–25) ================= -->
+
+<div class="scene active"><h1>Hey 💖</h1><p>I made something special for you</p></div>
+<div class="scene"><h1>Every Moment</h1><p>Feels better with you</p></div>
+<div class="scene"><h1>Ardhangini Ji 💞🎀</h1><p>You are my peace</p></div>
+<div class="scene"><p>You make ordinary moments magical</p></div>
+<div class="scene"><p>I smile more because of you</p></div>
+<div class="scene"><p>You feel like home</p></div>
+<div class="scene"><p>Every laugh of yours stays with me</p></div>
+<div class="scene"><p>You’re my favorite thought</p></div>
+<div class="scene"><p>I don’t need perfect days</p></div>
+<div class="scene"><p>Just days with you</p></div>
+
+<div class="scene">
+<p>Some memories I treasure 💗</p>
+<img class="photo" src="images/photo1.jpg">
 </div>
 
-<!-- ================= SCENE 2 ================= -->
+<div class="scene"><p>You are my calm in chaos</p></div>
+<div class="scene"><p>My reason to smile</p></div>
+<div class="scene"><p>My safe place</p></div>
+<div class="scene"><p>I choose you</p></div>
+<div class="scene"><p>Every single day</p></div>
+
 <div class="scene">
-<h1>Every Moment</h1>
-<p>Feels different when you are part of it</p>
+<p>And moments like these ✨</p>
+<img class="photo" src="images/photo2.jpg">
 </div>
 
-<!-- ================= SCENE 3 ================= -->
-<div class="scene">
-<h1>Ardhangini Ji 💞🎀</h1>
-<p>You are my comfort, my calm, my chaos</p>
-</div>
+<div class="scene"><p>Forever sounds better with you</p></div>
+<div class="scene"><p>Not just today</p></div>
+<div class="scene"><p>Not just now</p></div>
+<div class="scene"><p>But always ♾️</p></div>
+<div class="scene"><p>So here I am asking…</p></div>
+<div class="scene"><h1>Will You Be My Valentine?</h1></div>
+<div class="scene"><h1>Forever 💍💞</h1></div>
 
-<!-- ================= SCENE 4 ================= -->
-<div class="scene">
-<p>You make ordinary moments magical…</p>
-
-<!-- 📸 GOOGLE DRIVE PHOTO -->
-<!-- Replace FILE_ID_HERE with your Drive file ID -->
-<img class="photo"
-src="https://drive.google.com/uc?export=view&id=FILE_ID_HERE">
-</div>
-
-<!-- ================= SCENE 5 ================= -->
-<div class="scene">
-<p>I don’t want perfect days…</p>
-<p>Just days with you</p>
-</div>
-
-<!-- ================= SCENE 6 ================= -->
-<div class="scene">
-<h1>So… 💫</h1>
-<p>There’s something I want to ask</p>
-</div>
-
-<!-- ================= SCENE 7 (FINAL) ================= -->
-<div class="scene">
-<h1>Will You Be My Valentine?</h1>
-<p>Not just today… but forever ♾️</p>
-
-<button onclick="yes()">YES 💖</button>
+<!-- ================= NAV CONTROLS ================= -->
+<div class="controls">
+<button onclick="prevScene()">⟵ Previous</button>
+<button onclick="nextScene()">Next ⟶</button>
 </div>
 
 <script>
-/* SCENE AUTO PLAY */
+/* ================= SCENE LOGIC ================= */
 const scenes=document.querySelectorAll(".scene");
-let i=0;
+let index=0;
+let auto=true;
+
+function showScene(i){
+    scenes[index].classList.remove("active");
+    index=(i+scenes.length)%scenes.length;
+    scenes[index].classList.add("active");
+}
+function nextScene(){auto=false;showScene(index+1);}
+function prevScene(){auto=false;showScene(index-1);}
+
 setInterval(()=>{
-    scenes[i].classList.remove("active");
-    i=(i+1)%scenes.length;
-    scenes[i].classList.add("active");
+    if(auto) showScene(index+1);
 },4500);
 
-/* FLOATING HEARTS */
+/* ================= FLOATING HEARTS ================= */
 function heart(){
     const h=document.createElement("div");
     h.className="heart";
@@ -177,8 +188,33 @@ function heart(){
 }
 setInterval(heart,400);
 
-function yes(){
-    alert("Forever starts now 💍💞");
+/* ================= YOUTUBE MUSIC CONTROL ================= */
+let player;
+let playing=true;
+
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        height:'0',
+        width:'0',
+        videoId:'uH08H02VTiE',   // ← SONG VIDEO ID FROM YOUR LINK
+        playerVars:{
+            autoplay:1,
+            loop:1,
+            playlist:'uH08H02VTiE'
+        }
+    });
+}
+
+function toggleMusic(){
+    const btn=document.querySelector('.music-btn');
+    if(playing){
+        player.pauseVideo();
+        btn.innerText="🔇 Music OFF";
+    }else{
+        player.playVideo();
+        btn.innerText="🔊 Music ON";
+    }
+    playing=!playing;
 }
 </script>
 
