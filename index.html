@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ardhangini Ji 💞🎀</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🌸 STYLISH ROMANTIC FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    height:100vh;
+    background:linear-gradient(to bottom,#0f0c29,#302b63,#24243e);
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    color:white;
+}
+
+/* ================= SCENE (REEL STYLE) ================= */
+.scene{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    transition:opacity 1.5s ease;
+    padding:30px;
+}
+.scene.active{opacity:1;}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:52px;
+    margin-bottom:15px;
+    animation:zoomIn 2s;
+}
+
+p{
+    font-size:20px;
+    max-width:700px;
+    animation:fadeUp 2s;
+}
+
+/* ================= PHOTO ================= */
+.photo{
+    width:260px;
+    border-radius:20px;
+    margin-top:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* ================= BUTTON ================= */
+button{
+    margin-top:30px;
+    padding:14px 36px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+@keyframes zoomIn{
+    from{opacity:0;transform:scale(0.7);}
+    to{opacity:1;transform:scale(1);}
+}
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* ================= FLOATING HEARTS ================= */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:18px;
+    animation:floatUp 6s linear infinite;
+}
+@keyframes floatUp{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-120vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+🎵 YOUR SONG (ALREADY ADDED – DO NOT CHANGE)
+Song: https://youtu.be/uH08H02VTiE
+===================================================== -->
+<iframe width="1" height="1"
+src="https://www.youtube.com/embed/uH08H02VTiE?autoplay=1&loop=1&playlist=uH08H02VTiE"
+allow="autoplay">
+</iframe>
+
+<!-- ================= SCENE 1 ================= -->
+<div class="scene active">
+<h1>Hey… 💖</h1>
+<p>I made something special for you</p>
+</div>
+
+<!-- ================= SCENE 2 ================= -->
+<div class="scene">
+<h1>Every Moment</h1>
+<p>Feels different when you are part of it</p>
+</div>
+
+<!-- ================= SCENE 3 ================= -->
+<div class="scene">
+<h1>Ardhangini Ji 💞🎀</h1>
+<p>You are my comfort, my calm, my chaos</p>
+</div>
+
+<!-- ================= SCENE 4 ================= -->
+<div class="scene">
+<p>You make ordinary moments magical…</p>
+
+<!-- 📸 GOOGLE DRIVE PHOTO -->
+<!-- Replace FILE_ID_HERE with your Drive file ID -->
+<img class="photo"
+src="https://drive.google.com/uc?export=view&id=FILE_ID_HERE">
+</div>
+
+<!-- ================= SCENE 5 ================= -->
+<div class="scene">
+<p>I don’t want perfect days…</p>
+<p>Just days with you</p>
+</div>
+
+<!-- ================= SCENE 6 ================= -->
+<div class="scene">
+<h1>So… 💫</h1>
+<p>There’s something I want to ask</p>
+</div>
+
+<!-- ================= SCENE 7 (FINAL) ================= -->
+<div class="scene">
+<h1>Will You Be My Valentine?</h1>
+<p>Not just today… but forever ♾️</p>
+
+<button onclick="yes()">YES 💖</button>
+</div>
+
+<script>
+/* SCENE AUTO PLAY */
+const scenes=document.querySelectorAll(".scene");
+let i=0;
+setInterval(()=>{
+    scenes[i].classList.remove("active");
+    i=(i+1)%scenes.length;
+    scenes[i].classList.add("active");
+},4500);
+
+/* FLOATING HEARTS */
+function heart(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,400);
+
+function yes(){
+    alert("Forever starts now 💍💞");
+}
+</script>
+
+</body>
+</html>
 
